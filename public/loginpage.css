@@ -1,61 +1,68 @@
+html,
 body {
-  background-color: #000;
+  height: 100%;
 }
 
-.card {
-  width: 400px;
-  border: none;
+body.my-login-page {
+  font-size: 14px;
 }
 
-.btr {
-  border-top-right-radius: 5px !important;
+.my-login-page .brand {
+  margin: 120px auto;
 }
 
-.btl {
-  border-top-left-radius: 5px !important;
-}
-
-.btn-dark {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.btn-dark:hover {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.nav-pills {
-  display: table !important;
+.my-login-page .brand img {
   width: 100%;
 }
 
-.nav-pills .nav-link {
-  border-radius: 0px;
-  border-bottom: 1px solid #0d6efd40;
+.my-login-page .card-wrapper {
+  width: 400px;
 }
 
-.nav-item {
-  display: table-cell;
-  background: #0d6efd2e;
+.my-login-page .card {
+  border-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.form {
+.my-login-page .card.fat {
   padding: 10px;
-  height: 300px;
 }
 
-.form input {
-  margin-bottom: 12px;
-  border-radius: 3px;
+.my-login-page .card .card-title {
+  margin-bottom: 30px;
 }
 
-.form input:focus {
-  box-shadow: none;
+.my-login-page .form-control {
+  border-width: 2.3px;
 }
 
-.form button {
-  margin-top: 20px;
+.my-login-page .form-group label {
+  width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+  padding: 12px 10px;
+}
+
+.my-login-page .footer {
+  margin: 40px 0;
+  color: #888;
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .my-login-page .card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .my-login-page .card.fat {
+    padding: 0;
+  }
+
+  .my-login-page .card.fat .card-body {
+    padding: 15px;
+  }
 }
