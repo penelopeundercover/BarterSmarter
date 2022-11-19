@@ -15,6 +15,7 @@
 Models:
 -User: email, password, ref listings, ref history?
 -Listing: name of item, photo, description, monetary value, owner--ref user
--Message: text, ref user
+
+<!-- -Message-->
 
 <!-- -User History: matches, transactions -->
