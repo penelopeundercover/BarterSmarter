@@ -4,7 +4,7 @@ WHEN I add an item, THEN I can click a TRADE button that will find a random item
 WHEN I add an item, THEN it is saved to a list of items I want to trade
 WHEN I view a saved item, I can delete my own item or add another
 WHEN I view my profile, THEN I can see a list of items I have interacted with and their seller's information
-WHEN I view the list, THEN I can see all of the items than I have from a drop down menu and add them to be traded
+WHEN I view the list, THEN I can see all of the items I have from a drop down menu and add them to be traded
 WHEN I click a CONTACT button, THEN information to contact the seller is automatically shown on my screen
 Future development:
 Add sort by categories button

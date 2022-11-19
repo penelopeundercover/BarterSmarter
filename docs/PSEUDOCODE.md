@@ -11,3 +11,10 @@
      -View your listing history
     -View messages
 4.  Click logout and user is taken back to the landing page.
+
+Models:
+-User: email, password, ref listings
+-Listing: photo, description, monetary value, owner--ref user
+-Message: text, ref user
+
+<!-- -User History: matches, transactions -->
