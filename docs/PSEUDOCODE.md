@@ -13,8 +13,8 @@
 4.  Click logout and user is taken back to the landing page.
 
 Models:
--User: email, password, ref listings
--Listing: photo, description, monetary value, owner--ref user
+-User: email, password, ref listings, ref history?
+-Listing: name of item, photo, description, monetary value, owner--ref user
 -Message: text, ref user
 
 <!-- -User History: matches, transactions -->

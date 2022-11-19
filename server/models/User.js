@@ -1,6 +1,4 @@
-// TODO: Add password validation
-// TODO: References
-
+const { ObjectID } = require("bson");
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
@@ -9,14 +7,25 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/],
+      match: [/.+@.+\..+/, 'Enter a valid email address.'],
     },
     password: {
       type: String,
       required: true,
-      unique: true,
+        unique: true,
+      //TODO: password validation
       match: [],
+        },
+        listings: {
+            type: Schema.Types.ObjectID,
+            ref: "Listing",
     },
+    tokens: [{
+  token: {
+  type: String,
+  required: true
+    }
+        }]
   },
     //  TODO: Is this correct, and what exactly am I doing, here?
 //    {
