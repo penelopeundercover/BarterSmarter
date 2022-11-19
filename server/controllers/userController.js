@@ -7,15 +7,13 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
 
+  //Displays both user and their current listings.
+  //TODO (Possibly): Display user's history, as well.
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select("-__v")
       .populate({
-        path: "friends",
-        select: "-__v",
-      })
-      .populate({
-        path: "thoughts",
+        path: "listings",
         select: "-__v",
       })
       .then(async (user) =>
@@ -49,32 +47,14 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  //   addFriend(req, res) {
-  //     User.findOneAndUpdate(
-  //       { _id: req.params.userId },
-  //       { $addToSet: { friends: req.params.friendId } },
-  //       { new: true }
-  //     )
-  //       .then((user) =>
-  //         !user
-  //           ? res.status(404).json({
-  //               message: "User not found",
-  //             })
-  //           : res.json({ message: "Friend added!" })
-  //       )
-  //       .catch((err) => {
-  //         console.log(err);
-  //         res.status(500).json(err);
-  //       });
-  //   },
-
+  //When user is deleted, their listings are also deleted.
   deleteUser(req, res) {
     User.findOneAndRemove({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No such user exists" })
-          : Thought.deleteMany({
-              _id: { $in: user.thoughts },
+          : Listing.deleteMany({
+              _id: { $in: user.listings },
             })
       )
       .then((thought) =>
