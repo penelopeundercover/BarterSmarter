@@ -19,3 +19,4 @@ Models:
 <!-- -Message-->
 
 <!-- -User History: matches, transactions -->
+<!-- Collection for Transaction History: array structure similar to the friends or reactions from social network api assignment. include:[] -->
