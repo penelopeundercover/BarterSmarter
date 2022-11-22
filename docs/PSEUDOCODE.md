@@ -11,3 +11,12 @@
      -View your listing history
     -View messages
 4.  Click logout and user is taken back to the landing page.
+
+Models:
+-User: email, password, ref listings, ref history?
+-Listing: name of item, photo, description, monetary value, owner--ref user
+
+<!-- -Message-->
+
+<!-- -User History: matches, transactions -->
+<!-- Collection for Transaction History: array structure similar to the friends or reactions from social network api assignment. include:[] -->
