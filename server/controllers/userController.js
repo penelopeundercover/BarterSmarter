@@ -8,7 +8,7 @@ const userController = {
   },
 
   //Displays both user and their current listings.
-  //TODO (Possibly): Display user's history, as well.
+  //TODO: Display user's history, as well.
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select("-__v")
