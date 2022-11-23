@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// Set up pre-save middleware to create password
+// Pre-save middleware to hash the password before it's saved to the database
 userSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
@@ -36,6 +36,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+<<<<<<< Updated upstream
 // tokens: [
 //   {
 //     token: {
@@ -52,6 +53,13 @@ userSchema.methods.isCorrectPassword = async function (password) {
 //   id: true,
 // }
 
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+=======
+>>>>>>> Stashed changes
 const User = model("User", userSchema);
 
 module.exports = User;

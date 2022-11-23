@@ -26,8 +26,6 @@ const listingSchema = new Schema({
   // TODO: photo:{}
 });
 
-// TODO: Do I need that Json thing in here, like in User?
-
 const Listing = model("Listing", listingSchema);
 
 module.exports = Listing;
