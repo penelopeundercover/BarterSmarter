@@ -1,4 +1,4 @@
-const db = require('../../../../Module21/Book-Search-Engine/server/config/connection');
+const db = require('./connection');
 // const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {

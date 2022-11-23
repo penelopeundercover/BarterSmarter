@@ -1,35 +1,29 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcryptjs");
 
-const userSchema = new Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    match: [/.+@.+\..+/, "Enter a valid email address."],
   },
-  // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
-);
+  password: {
+    type: String,
+    required: true,
+    unique: true,
+    minLength: 7,
+    maxLength: 23,
+  },
+  listings: {
+    type: Schema.Types.ObjectID,
+    ref: "Listing",
+  },
+});
 
-// hash user password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+// Pre-save middleware to hash the password before it's saved to the database
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -37,12 +31,35 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+// Compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+<<<<<<< Updated upstream
+// tokens: [
+//   {
+//     token: {
+//       type: String,
+//       required: true,
+//     },
+//   },
+// ],
+// // This part is optional.
+// {
+//   toJSON: {
+//     getters: true,
+//   },
+//   id: true,
+// }
+
 // custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
-const User = model('User', userSchema);
+=======
+>>>>>>> Stashed changes
+const User = model("User", userSchema);
 
 module.exports = User;
