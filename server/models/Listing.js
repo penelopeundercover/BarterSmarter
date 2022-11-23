@@ -23,7 +23,7 @@ const listingSchema = new Schema({
     required: true,
     ref: "User",
   },
-  // TODO: photo:{}
+  // TODO: image:{}
 });
 
 const Listing = model("Listing", listingSchema);
