@@ -5,7 +5,7 @@
 2.  Homepage: -Navbar: Logo, Profile, Logout
     -Current listing with photo
     -Button to look for matching listings
-    -Matching listing with photo which will obviously change as you click the search button above
+    -Matching listing with photo which will render each time you click the search button above
     -Button to message seller
 3.  Profile page: -View your user info  
      -View your listing history
@@ -18,5 +18,4 @@ Models:
 
 <!-- -Message-->
 
-<!-- -User History: matches, transactions -->
-<!-- Collection for Transaction History: array structure similar to the friends or reactions from social network api assignment. include:[] -->
+-User History: matches, transactions - Collection for Transaction History: array structure similar to the friends or reactions from social network api assignment. include:[]
