@@ -29,7 +29,6 @@ const productSchema = new Schema({
   stock: {
     type: Number,
     required: true,
-
   },
   category_id: {
     type: Schema.Types.ObjectId,

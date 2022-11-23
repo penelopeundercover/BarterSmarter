@@ -5,11 +5,11 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Nike' },
-    { name: 'Jordan' },
-    { name: 'Converse' },
-    { name: 'Vans' },
-    { name: 'Adidas' }
+    { name: 'Electronics' },
+    { name: 'Furniture' },
+    { name: 'Music' },
+    { name: 'Clothing' },
+    { name: 'Sports' }
   ]);
 
   console.log('categories seeded');
@@ -17,95 +17,95 @@ db.once('open', async () => {
   await Product.deleteMany();
 
   const products = await Product.insertMany([
+    // ELECTRONICS CATEGORY
     {
-      name: 'Nike Air Max 90',
-      description:
-        'First a legend on the track and then a legend in the streets, the Nike Air Max 90 By You brings the comfort of Air to the masses.',
-      image: 'Nike1.png',
+      name: '70" LED TV',
       category: categories[0]._id,
-      price: 140,
+      description:
+        '',
+      image: '',
+      price: 100,
       quantity: 114
     },
     {
-      name: 'Nike Air Force 1 Low',
-      description:
-        'The Nike Air Force 1 Low became an instant icon after its debut in 1982. Now you can make this classic your own with a color palette inspired by the ‘80s and ‘90s and premium materials including smooth and rippled leather and a new, matching sidewall selection. It’s time to create a look that speaks to you.',
-      image: 'Nike2.png',
+      name: '75" OLED TV',
       category: categories[0]._id,
-      price: 110,
+      description:
+        '',
+      image: '',
+      price: 2000,
       quantity: 322
     },
     {
-      name: 'Nike Air Max 95',
+      name: 'PlayStation 5',
       category: categories[0]._id,
       description:
-        'Celebrate workwear’s wide appeal with a new take on the Nike Air Max 95. Utilitarian materials like polished twill and leather are rugged and durable with an undeniable nod to runway style. Perfectly understated details like contrast stitching and gradient layers add a new level of depth to this long-time favorite.',
+        '',
       image: 'Nike3.png',
       price: 180,
       quantity: 243
     },
     {
-      name: 'Nike Waffle One',
+      name: 'Xbox Series X',
       category: categories[0]._id,
       description:
-        'The Nike Waffle One is the original racer. Go for a hyper-heritage look or modernize with colors and details inspired by long days at the beach. OG materials and colors straight from the vault blend seamlessly with innovative materials and finishes for a look that’s 100% you.',
-      image: 'Nike4.png',
+        '',
       price: 130,
       quantity: 106
     },
     {
-      name: 'Nike React Live',
+      name: 'Nintendo Switch OLED',
       category: categories[0]._id,
       description:
-        'The Nike React Live simulates the thrills of a ropes course without ever leaving the ground. The cable system that runs around the shoe nods to an adrenaline-pumping adventure. Choose “vertigo” mesh for a mind-bending visual experience. Outdoor-inspired laces and anodized aglets that draw on the look of a classic carabiner finish off this unique salute to the great outdoors.',
-      image: 'Nike5.png',
+        '',
       price: 120,
       quantity: 247
     },
     {
-      name: 'Nike Air Max 97',
+      name: 'Xbox Elite Wireless Controller',
       category: categories[0]._id,
       description:
-        'Bring back the nostalgia of long summer days from your childhood with a hot color palette and a wavy mesh that alludes to the mesmerizing optical illusion of heat rising off the blacktop. Classic layers get a new level of appeal with material choices, pop colors and metallic silver that hearkens back to the real OG: Nike Air Max 97.',
+        '',
       image: 'Nike6.png',
       price: 190,
       quantity: 91
     },
     {
-      name: 'Nike Air Presto',
+      name: 'Razer Naga',
       category: categories[0]._id,
       description:
-        'The Nike Air Presto Shoe elevates a popular runner with modern innovation. Color the snug bootie and iconic cage, then dial up your design with speckles and color on the heel cushioning. Finish it off with a short personal message on the heel.',
+        '.',
       image: 'Nike7.png',
       price: 150,
       quantity: 203
     },
     {
-      name: 'Nike React Vision',
+      name: 'SteelSeries Apex Pro TKL Keyboard',
       category: categories[0]._id,
       description:
-        'Inspired by the mythical creatures of Mexican folk art, the Nike React Vision By You serves up a palette of textures, graphics and materials that let you express your wild side. Add surreal comfort with Nike React foam and a personal message on the heel clip for a shoe that could only come from the dream world.',
+        ''
       image: 'Nike8.png',
       price: 150,
       quantity: 187
     },
     {
-      name: 'Air Jordan 1 Low',
-      category: categories[1]._id,
-      description: "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. It's made for casual mode, with an iconic design that goes with everything and never goes out of style.",
+      name: 'Amazon Alexa',
+      category: categories[0]._id,
+      description: '',
       image: 'Jordan1.png',
       price: 110,
       quantity: 118
     },
     {
-      name: 'Air Jordan 1 Mid',
-      category: categories[1]._id,
+      name: 'Samsung Electronic Smart Refrigerator',
+      category: categories[0]._id,
       description:
-        'The Air Jordan 1 Mid Shoe is inspired by the first AJ1, offering fans of Jordan retros a chance to follow in the footsteps of greatness. Fresh color trims the clean, classic materials, injecting some newness into the familiar design.',
+        '',
       image: 'Jordan2.jpg',
       price: 120,
       quantity: 162
     },
+    // FURNITURE CATEGORY
     {
       name: 'Air Jordan 4 Retro',
       category: categories[1]._id,
@@ -196,6 +196,7 @@ db.once('open', async () => {
       price: 60,
       quantity: 136
     },
+    // MUSIC CATEGORY
     {
       name: 'Converse Chuck Taylor All Star High Top/Black',
       category: categories[2]._id,
@@ -286,6 +287,7 @@ db.once('open', async () => {
       price: 55,
       quantity: 146
     },
+    // CLOTHING CATEGORY
     {
       name: 'Vans Authentic/Brown',
       category: categories[3]._id,
@@ -375,7 +377,89 @@ db.once('open', async () => {
       image: 'Adidas8.jpg',
       price: 65,
       quantity: 124
-    } 
+    },
+    // SPORTS CATEGORY
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+    {
+      name: '',
+      category: categories[4]._id,
+      description:
+      image: ,
+      price: ,
+      quantity: 
+    },
+
   ]);
 
   console.log('products seeded');
