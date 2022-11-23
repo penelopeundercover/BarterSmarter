@@ -2,6 +2,12 @@ const { ObjectID } = require("bson");
 const { Schema, model } = require("mongoose");
 
 const listingSchema = new Schema({
+  //We shouldn't need id, because Mongo creates one automatically. But let's keep this on hand just in case.
+  // id: {
+  //   type: Number,
+  //   required: true,
+  //   autoIncrement: true,
+  // },
   name: {
     type: String,
     required: true,
@@ -23,7 +29,12 @@ const listingSchema = new Schema({
     required: true,
     ref: "User",
   },
-  // TODO: image:{}
+  // TODO: image:{},
+  category_id: {
+    type: Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
 });
 
 const Listing = model("Listing", listingSchema);

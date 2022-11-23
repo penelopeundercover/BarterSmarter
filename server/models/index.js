@@ -1,8 +1,8 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
-const User = require('./User');
+const Category = require("./Category");
+const Tag = require("./Tag");
+const ProductTag = require("./ProductTag");
+const User = require("./User");
+const Listing = require("./Listing");
 
-module.exports = { Product, Category, Tag, ProductTag }; 
+module.exports = { Category, Tag, ProductTag, User, Listing };
