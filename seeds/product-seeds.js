@@ -1,9 +1,10 @@
 const { Product } = require('../models');
 
 const productData = [
-  // Category 1: Electronics
+  // Category 1: Electronics 1 - 10
   {
     product_name: '70" LED TV',
+    product_description: '',
     price: 500,
     stock: 1,
     category_id: 1,
@@ -198,13 +199,13 @@ const productData = [
     category_id: 4,
   },
   {
-    product_name: 'Plain T-shirt',
+    product_name: 'Plain T-Shirt',
     price: 14,
     stock: 14,
     category_id: 4,
   },
   {
-    product_name: 'Band T-shirt',
+    product_name: 'Band T-Shirt',
     price: 20,
     stock: 10,
     category_id: 4,
@@ -228,7 +229,7 @@ const productData = [
     category_id: 4,
   },
   {
-    product_name: 'Womnen\'s Shirt',
+    product_name: 'Women\'s Shirt',
     price: 15,
     stock: 3,
     category_id: 4,
@@ -243,12 +244,6 @@ const productData = [
     product_name: 'Doc Marten\'s Boots',
     price: 90,
     stock: 5,
-    category_id: 4,
-  },
-  {
-    product_name: 'Black Hoodie',
-    price: 50,
-    stock: 11,
     category_id: 4,
   },
   // Category 5: Sports
@@ -278,7 +273,7 @@ const productData = [
   },
   {
     product_name: 'Authentic Aaron Judge Record-Breaking 62nd Home Run Ball',
-    price: $3000000,
+    price: 3000000,
     stock: 1,
     category_id: 5,
   },
@@ -290,7 +285,7 @@ const productData = [
   },
   {
     product_name: 'Lionel Messi Authentic Boots',
-    price: $500,
+    price: 500,
     stock: 3,
     category_id: 5,
   },

@@ -1,12 +1,10 @@
-const { connect, connection } = require("mongoose");
-//TODO: require .env
+const mongoose = require('mongoose');
 
-const connectionString =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/barterSmarterDB";
-
-connect(connectionString, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/barterSmarterDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
-module.exports = connection;
+module.exports = mongoose.connection;
