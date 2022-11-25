@@ -1,4 +1,4 @@
-const Listing = require("../models");
+const { Listing } = require("../models");
 const listingController = {
   getListings(req, res) {
     Listing.find()

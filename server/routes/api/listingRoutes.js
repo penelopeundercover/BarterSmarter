@@ -7,10 +7,10 @@ const {
   deleteListing,
 } = require("../../controllers/listingController");
 
-// /api/thought
+// /api/listing
 router.route("/").get(getListings).post(createListing);
 
-// /api/thought/:thoughtId
+// /api/listing/:listingId
 router
   .route("/:listingId")
   .get(getSingleListing)
