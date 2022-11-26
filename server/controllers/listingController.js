@@ -17,6 +17,7 @@ const listingController = {
       .catch((err) => res.status(500).json(err));
   },
 
+  //TODO: Possible changes to createListing to accomodate images
   createListing(req, res) {
     Listing.create(req.body)
       .then((listing) => res.json(listing))

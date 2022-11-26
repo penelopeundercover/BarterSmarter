@@ -7,6 +7,7 @@ const {
   deleteListing,
 } = require("../../controllers/listingController");
 
+//TODO: Possible changes to post to accomodate images
 // /api/listing
 router.route("/").get(getListings).post(createListing);
 

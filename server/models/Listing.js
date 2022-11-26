@@ -25,8 +25,7 @@ const listingSchema = new Schema({
   },
   image: {
     type: String,
-    data: Buffer,
-    contentType: "image/png",
+    ref: "Image",
     required: false,
   },
   category_id: {
