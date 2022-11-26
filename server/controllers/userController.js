@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongoose").Types;
-const { User } = require("../models");
+const { User, Listing } = require("../models");
 
 const userController = {
   getUsers(req, res) {
@@ -56,14 +56,13 @@ const userController = {
           ? res.status(404).json({ message: "No such user exists" })
           : Listing.deleteMany({
               _id: { $in: user.listings },
-            })
-      )
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({
-              message: "User deleted, but no thoughts found",
-            })
-          : res.json({ message: "User successfully deleted" })
+            }).then((listingData) =>
+              !listingData
+                ? res.status(404).json({
+                    message: "User deleted, but no listings found",
+                  })
+                : res.json({ message: "User successfully deleted" })
+            )
       )
       .catch((err) => {
         console.log(err);

@@ -23,7 +23,16 @@ const listingSchema = new Schema({
     required: true,
     ref: "User",
   },
-  // TODO: image:{}
+  image: {
+    type: String,
+    ref: "Image",
+    required: false,
+  },
+  category_id: {
+    type: Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
 });
 
 const Listing = model("Listing", listingSchema);
