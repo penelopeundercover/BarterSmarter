@@ -23,7 +23,12 @@ const listingSchema = new Schema({
     required: true,
     ref: "User",
   },
-  // TODO: image:{},
+  image: {
+    type: String,
+    data: Buffer,
+    contentType: "image/png",
+    required: false,
+  },
   category_id: {
     type: Schema.Types.ObjectId,
     ref: "Category",
