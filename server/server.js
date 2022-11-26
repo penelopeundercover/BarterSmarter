@@ -8,7 +8,8 @@ const multer = require("multer");
 require("dotenv").config();
 const path = require("path");
 
-const PORT = process.env.PORT;
+//TODO: Switch port .env only
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +17,7 @@ app.use(express.json());
 app.use(routes);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
-appluse(bodyParser.json());
+app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 //Store uploaded images in the uploads folder
