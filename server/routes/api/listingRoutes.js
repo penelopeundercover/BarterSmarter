@@ -7,10 +7,11 @@ const {
   deleteListing,
 } = require("../../controllers/listingController");
 
-// /api/thought
+//TODO: Possible changes to post to accomodate images
+// /api/listing
 router.route("/").get(getListings).post(createListing);
 
-// /api/thought/:thoughtId
+// /api/listing/:listingId
 router
   .route("/:listingId")
   .get(getSingleListing)

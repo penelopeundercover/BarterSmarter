@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   email: {
     type: String,
     required: true,
@@ -15,10 +15,12 @@ const userSchema = new mongoose.Schema({
     minLength: 7,
     maxLength: 23,
   },
-  listings: {
-    type: Schema.Types.ObjectID,
-    ref: "Listing",
-  },
+  listings: [
+    {
+      type: Schema.Types.ObjectID,
+      ref: "Listing",
+    },
+  ],
 });
 
 // Pre-save middleware to hash the password before it's saved to the database
@@ -36,30 +38,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-<<<<<<< Updated upstream
-// tokens: [
-//   {
-//     token: {
-//       type: String,
-//       required: true,
-//     },
-//   },
-// ],
-// // This part is optional.
-// {
-//   toJSON: {
-//     getters: true,
-//   },
-//   id: true,
-// }
-
-// custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
-
-=======
->>>>>>> Stashed changes
 const User = model("User", userSchema);
 
 module.exports = User;
