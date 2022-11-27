@@ -4,7 +4,7 @@ import axios from "axios";
 
 const CreateListing = () => {
   const [listings, setListings] = useState([]);
-  const url = "http://localhost:3001/api/persons/";
+  const url = "http://localhost:3001/api/listings/";
   useEffect(() => {
     axios.get(url).then((res) => {
       setListings(res.data);

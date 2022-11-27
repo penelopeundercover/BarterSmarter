@@ -8,6 +8,8 @@ This project is a fantastic opportunity to show employers your collaborative ski
 
 Your group will use everything you’ve learned throughout this course to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand. This project will provide you with the best opportunity to demonstrate your problem-solving skills, which employers will want to see during interviews. Once again, the user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
 
+\*\*CHANGES MADE BY HENRY AND CHRIS: - We don't have to use Heroku since it won't be free anymore on presentation day. Chris recommended fly.io. - We can use GraphQL, OR Mongo, OR SQL. We can use just one of them.
+
 - Use React for the front end.
 
 - Use GraphQL with a Node.js and Express.js server.
