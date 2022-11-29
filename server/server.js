@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const multer = require("multer");
-require("dotenv").config();
+require("dotenv").config({ path: "./config.env" });
 const path = require("path");
 
 //TODO: Switch port to .env only
