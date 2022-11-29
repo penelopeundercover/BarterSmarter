@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const multer = require("multer");
-require("dotenv").config();
+require("dotenv").config({ path: "./config.env" });
 const path = require("path");
 
 //TODO: Switch port to .env only
@@ -14,6 +14,9 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+}
 app.use(routes);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
