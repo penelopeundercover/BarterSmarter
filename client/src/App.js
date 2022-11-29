@@ -6,16 +6,16 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import "./App.css";
-import "./components/loginpage";
-import "./components/signuppage";
-import "./components/homepage";
+import Login from "./components/Loginpage";
+import Signup from "./components/Signuppage";
+import Home from "./components/Homepage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/BarterSmarter/loginpage" element={<Login />} />
-      <Route path="/BarterSmarter/signuppage" element={<Signup />} />
-      <Route path="/BarterSmarter/homepage" element={<Home />} />
+      <Route path="/BarterSmarter/Loginpage" element={<Login />} />
+      <Route path="/BarterSmarter/Signuppage" element={<Signup />} />
+      <Route path="/BarterSmarter/Homepage" element={<Home />} />
     </>
   )
 );
@@ -23,9 +23,9 @@ const router = createBrowserRouter(
 function App() {
   return (
     <div className="App">
-      <loginpage />
-      <signuppage />
-      <homepage />
+      <Login />
+      <Signup />
+      <Home />
     </div>
   );
 }
