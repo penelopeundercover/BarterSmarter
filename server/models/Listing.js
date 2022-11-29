@@ -28,10 +28,9 @@ const listingSchema = new Schema({
     ref: "Image",
     required: false,
   },
-  category_id: {
+  category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
-    required: true,
   },
 });
 

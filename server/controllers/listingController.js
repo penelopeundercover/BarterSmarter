@@ -32,8 +32,7 @@ const listingController = {
       .then((listing) =>
         !listing
           ? res.status(404).json({ message: "That's not a listing!" })
-          : //  TODO: Write this correctly
-            Listing.deleteOne({ _id: { $in: listing.user } })
+          : Listing.deleteOne({ _id: { $in: listing.user } })
       )
       .then(() => res.json({ message: "Listing deleted" }))
       .catch((err) => res.status(500).json(err));

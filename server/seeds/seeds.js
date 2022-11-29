@@ -1,9 +1,15 @@
-const db = require("../server/config/connection");
-const { User, Listing, Category } = require("../server/models");
+const db = require("../config/connection");
+const { User, Listing, Category } = require("../models");
+
+db.on("error", (err) => err);
 
 db.once("open", async () => {
+  console.log("connected");
+
+  //Drop existing categories
   await Category.deleteMany();
 
+  //Add categories and await the results
   const categories = await Category.insertMany([
     { name: "Electronics" },
     { name: "Furniture" },
@@ -14,8 +20,10 @@ db.once("open", async () => {
 
   console.log("categories seeded");
 
+  //Drop existing listings
   await Listing.deleteMany();
 
+  //Add listings and await the results
   const listings = await Listing.insertMany([
     // ELECTRONICS CATEGORY
     {
@@ -342,7 +350,7 @@ db.once("open", async () => {
     {
       name: "Royals 9FIFTY Snapback Hat",
       category: categories[4]._id,
-      description: "Blue Kansas City Royal's snapback ha size 7 1/4.",
+      description: "Blue Kansas City Royals snapback hat size 7 1/4.",
       image: "../assets/Product Pictures/Sports/royalshat.jpg",
       monetaryValue: 35,
     },
@@ -350,7 +358,7 @@ db.once("open", async () => {
       name: "Chiefs Patrick Mahomes Jersey",
       category: categories[4]._id,
       description:
-        "Wear #15 just like Chiefs quarterbackPatrick Mahomes does on game day.",
+        "Wear #15 just like Chiefs quarterback Patrick Mahomes does on game day.",
       image: "../assets/Product Pictures/Sports/patrickmahomesjersey.jpg",
       monetaryValue: 100,
     },
@@ -382,7 +390,7 @@ db.once("open", async () => {
       name: "Tom Brady Game-Worn Cleats",
       category: categories[4]._id,
       description:
-        "Tom Brady's game-worn cleats from a game played while he was still with the NEw England Patriots.",
+        "Tom Brady's game-worn cleats from a game played while he was still with the New England Patriots.",
       image: "../assets/Product Pictures/Sports/tombradycleats.jpg",
       monetaryValue: 30050,
     },
@@ -421,8 +429,10 @@ db.once("open", async () => {
 
   console.log("listings seeded");
 
+  //Drop existing users
   await User.deleteMany();
 
+  //Add new users
   await User.create({
     email: "pamela@testmail.com",
     password: "password12345",

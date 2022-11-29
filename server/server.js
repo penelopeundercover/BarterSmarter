@@ -8,7 +8,7 @@ const multer = require("multer");
 require("dotenv").config();
 const path = require("path");
 
-//TODO: Switch port .env only
+//TODO: Switch port to .env only
 const PORT = process.env.PORT || 3001;
 const app = express();
 
