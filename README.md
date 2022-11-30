@@ -8,7 +8,7 @@ This app allows users to add items to a database and be matched with other items
 Run npm i in Node to install the app dependencies.
 
 ## Preview
-![Home](Screenshots/Home.png)
+![Home](/posts/images/Home.jpg)
 
 ## Credits
 
