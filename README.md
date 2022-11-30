@@ -11,7 +11,7 @@ Run npm i in Node to install the app dependencies.
 ![Signup](Screenshots/Signup.png)
 
 ## Credits
-Marianne Seiwaert
+Marianne Seiwert
 Han Zhang
 Christian Fellwock
 
