@@ -9,7 +9,6 @@ Run npm i in Node to install the app dependencies.
 
 ## Preview
 ![Login](Screenshots/Login.png)
-![Signup](Screenshots/Signup.png)
 ![Home](Screenshots/Home.png)
 
 ## Credits
