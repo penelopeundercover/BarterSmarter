@@ -7,11 +7,10 @@ This app allows users to add items to a database and be matched with other items
 ## Installation
 Run npm i in Node to install the app dependencies.
 
-## Preview
-![Home](BarterSmarter/images/Home.jpg)
+## Preview!
+[Signup](Screenshots/Signup.png)
 
 ## Credits
-
 Marianne Seiwaert
 Han Zhang
 Christian Fellwock
